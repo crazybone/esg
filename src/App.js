@@ -45,23 +45,54 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch('https://dev-wyeth-3.pdoh-dev.acommercedev.com/db')
-      .then(response => {
-        if (!response.ok) throw new Error('Failed to fetch data');
-        return response.json();
-      })
-      .then(data => {
-        setDepartments(data.departments || []);
-        setCountries(data.countries || []);
-        setLogos(data.logo || []);
+  // useEffect(() => {
+  //   fetch('https://dev-wyeth-3.pdoh-dev.acommercedev.com/db')
+  //     .then(response => {
+  //       if (!response.ok) throw new Error('Failed to fetch data');
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       setDepartments(data.departments || []);
+  //       setCountries(data.countries || []);
+  //       setLogos(data.logo || []);
+  //       setLoading(false);
+  //     })
+  //     .catch(err => {
+  //       setError(err.message);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://dev-wyeth-3.pdoh-dev.acommercedev.com/db');
+      if (!response.ok) throw new Error('Failed to fetch data from URL');
+      const data = await response.json();
+      setDepartments(data.departments || []);
+      setCountries(data.countries || []);
+      setLogos(data.logo || []);
+      setLoading(false);
+    } catch (err) {
+      console.warn('URL fetch failed, attempting to load local JSON:', err.message);
+      try {
+        const localResponse = await fetch('/db.json');
+        if (!localResponse.ok) throw new Error('Failed to fetch local JSON');
+        const localData = await localResponse.json();
+        setDepartments(localData.departments || []);
+        setCountries(localData.countries || []);
+        setLogos(localData.logo || []);
         setLoading(false);
-      })
-      .catch(err => {
-        setError(err.message);
+      } catch (localErr) {
+        setError(localErr.message);
         setLoading(false);
-      });
-  }, []);
+      }
+    }
+  };
+
+  fetchData();
+}, []);
+
 
   useEffect(() => {
     localStorage.setItem('signatureFormData', JSON.stringify(formData));
