@@ -11,3 +11,202 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+p {
+  margin:0 auto 30px;
+  display: block;
+  width:100%;
+  text-align:left;
+}
+p > img {
+  display: block;
+  margin: 0 auto;
+  width: 324px;
+}
+.main {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 99vh;
+  display: flex;
+  flex-direction: row;
+}
+.main .MuiBox-root {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(128.97deg, #deeaf3 32.79%, #f4f9f5 112.47%);
+  min-height: unset;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper {
+  position: relative;
+  margin: 10px 0;
+  padding-top: 5%;
+  width: 50%;
+  display: inline;
+  background: #ffffff;
+}
+.form-container {
+  position: relative;
+  margin: 10px auto;
+  padding-top: 0;
+  width: 80%;
+  max-width: 720px;
+  display: block;
+  background: #ffffff;
+}
+.form-container .MuiBox-root {
+  min-height: unset;
+  background: #fff
+}
+.form-container .acom-top-logo {
+  margin: 0 0 2vw 0.8vw;
+  width: 17vw;
+  display: block;
+}
+.form-container .MuiFormControl-root {
+  width: 46%;
+  margin: 10px;
+}
+.form-container .MuiFormControl-root fieldset {
+  border-color: #ddd;
+}
+.form-container .MuiFormControl-root label[id^='email-label'] + .MuiInputBase-root:after {  
+  content: '@acommerce.asia';
+  position: absolute;
+  padding-right: 10px;
+  top: 1px;
+  right: 4px;
+  display: block;
+  width: auto;
+  height: 51px;
+  font-size: 1rem;
+  line-height: 3;
+  color: #cccccc;
+  background: #ffffff;
+}
+.form-container .MuiFormControl-root label {
+  background-color: white;
+    padding: 0 4px;
+}
+.form-container .MuiFormControl-root input {
+  margin-bottom: 10px;
+  max-width: 360px;  
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* .form-container .MuiFormControl-root input[id^='email']:before {
+  content: '@acommerce.asia';
+  font-size: 1rem;
+  color: #000;
+  position: absolute;
+  display: inline;
+  top: 0;
+  left: 0;
+  background: red;
+  width: 50px;
+  height: 30px;
+} */
+
+.full-width {
+  width: 100%;
+}
+.half-width {
+  width: 42%;
+}
+#phone-container {
+  margin: 10px 0 10px 10px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  max-width: 47%;
+}
+
+#dept {
+  margin: 0;;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  max-width: 60%;
+}
+#phone-container .MuiFormControl-root:first-child {
+  margin: 0 0 10px;
+  width: 30%;
+}
+
+/* #phone-container .MuiFormControl-root:first-child div[role^="combobox"] {
+} */
+#phone-container .MuiFormControl-root:first-child input {
+  margin-bottom: 10px;
+}
+/* #phone-container .MuiFormControl-root:first-child input, */
+#phone-container .MuiFormControl-root:first-child fieldset {
+  height: 56px;
+  border-radius: 6px 0 0 6px;
+  border: 1px solid #ddd;
+  border-right: 0;
+  top: -4px;
+}
+
+#phone-container .MuiFormControl-root:nth-child(2) {
+  margin: 0 0 0 -9px;
+  width: 68%;
+}
+#phone-container .MuiFormControl-root:nth-child(2) input {
+  border-left: 1px solid #ddd;
+  border-radius:  0 6px 6px 0;
+}
+/* #phone-container .MuiFormControl-root:nth-child(2) input, */
+#phone-container .MuiFormControl-root:nth-child(2) fieldset {
+  border-radius:  0 0 0 0;
+}
+
+#ccode {
+  max-width: 100px;
+  width: 25%;
+}
+#phone {
+  width: 90%;
+}
+.form-container .MuiFormControl-root input + fieldset {
+  border: 0;
+}
+div[role^="combobox"] {
+  padding: 6px 0 6px 14px;
+  flex-direction: row;
+  width: 90%;
+  min-height: 41px!important;
+  text-overflow: unset;
+  line-height: 41px;
+  justify-content: start;
+  align-items: center;
+}
+div[role^="combobox"] > .MuiBox-root {  
+  padding-left: 2px;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.remark {
+  position: relative;
+  display: block!important;
+  width: 100%!important;
+  color: #a8a8a8;
+  line-height: 1.5;
+}
+.remark a {
+  display: inline-block;
+  color:#2f5573;
+  text-decoration: none;
+}
