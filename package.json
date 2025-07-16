@@ -2,7 +2,7 @@
   "name": "esg",
   "version": "0.1.0",
   "private": true,
-  "_comment": "homepage: https://crazybone.github.io/esg/",
+  "homepage": "https://crazybone.github.io/esg/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -22,8 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "_comment1": "predeploy: npm run build",
-    "_comment2": "deploy-gh: pages -d build"
+    "predeploy": "npm run build",
+    "deploy-gh": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
