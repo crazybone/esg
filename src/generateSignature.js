@@ -96,7 +96,7 @@ export function generateSignature(data) {
                   <td style="width:50%;padding:0 10px 0 0;" valign="middle">
                       <div style="display:block;width:50%;height:100%;">
                         <!-- <a href="" target="_blank" style="display:block;"> -->
-                          <img src="${logo}" width="200" alt="aCommerce"/>
+                          <img src="${process.env.PUBLIC_URL}${logo}" width="200" alt="aCommerce"/>
                         <!-- </a> -->
                       </div>
                   </td>
@@ -104,12 +104,12 @@ export function generateSignature(data) {
                   <ul style="list-style:none;margin:0;padding:0;display:inline-block;float:right;">
       <li class="social-icon" style="display:inline-block;width:25px;">
         <a href="https://www.facebook.com/acommerce.asia/">
-          <img src="/assets/fb-r-30.jpg" alt="Facebook" width="20" class="sender-fb">
+          <img src="${process.env.PUBLIC_URL}/assets/fb-r-30.jpg" alt="Facebook" width="20" class="sender-fb">
         </a>
       </li>
       <li class="social-icon" style="display:inline-block;width:25px;">
         <a href="https://www.linkedin.com/company/acommerce/">
-          <img src="/assets/li-r-30.jpg" alt="LinkedIn" width="20" class="sender-fb">
+          <img src="${process.env.PUBLIC_URL}/assets/li-r-30.jpg" alt="LinkedIn" width="20" class="sender-fb">
         </a>
       </li>
     </ul>

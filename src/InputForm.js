@@ -48,7 +48,8 @@ function InputForm({
       <Box class="form-container">
       <img
         className="acom-top-logo"
-        src="/assets/acomm-logo-s.jpg"
+        //src="/assets/acomm-logo-s.jpg"
+        src={`${process.env.PUBLIC_URL}/assets/acomm-logo-s.jpg`}
         alt="aCommerce"
       />
       <TextField
@@ -79,7 +80,6 @@ function InputForm({
         label="Email"
         value={formData.email}
         onChange={(e) => {
-          // Prevent user from typing '@' or domain
           const value = e.target.value.split("@")[0];
           setFormData({ ...formData, email: value });
         }}
@@ -106,7 +106,8 @@ function InputForm({
             {(countries || []).map((country) => (
               <MenuItem key={country.code} value={country.code}>
                 <img
-                  src={country.flag}
+                  //src={country.flag}
+                  src={`${process.env.PUBLIC_URL}${country.flag}`}
                   alt={country.name}
                   style={{
                     width: 24,
@@ -145,18 +146,6 @@ function InputForm({
             const logo = (logos || []).find((l) => l.image === selected);
             return logo ? (
               <Box sx={{ display: "flex", alignItems: "center" }}>
-                {/* <img
-                  src={logo.image}
-                  alt={logo.name}
-                  style={{
-                    width: 32,
-                    height: 32,
-                    marginRight: 8,
-                    objectFit: "contain",
-                    borderRadius: 4,
-                    background: "#fff",
-                  }}
-                /> */}
                 <span>{logo.name}</span>
               </Box>
             ) : (
@@ -164,23 +153,10 @@ function InputForm({
             );
           }}
           variant="outlined"
-          // className="half-width"
         >
           {(logos || []).map((l) => (
             <MenuItem key={l.image} value={l.image}>
               <Box sx={{ display: "flex", alignItems: "center" }}>
-                {/* <img
-                  src={l.image}
-                  alt={l.name}
-                  style={{
-                    width: 32,
-                    height: 32,
-                    marginRight: 8,
-                    objectFit: "contain",
-                    borderRadius: 4,
-                    background: "#fff",
-                  }}
-                /> */}
                 <span>{l.name}</span>
               </Box>
             </MenuItem>
@@ -203,7 +179,6 @@ function InputForm({
               : "Select Department"
           }
           variant="outlined"
-          // className="half-width"
         >
           {departments.map((d) => (
             <MenuItem key={d.id} value={d.id}>
@@ -229,7 +204,6 @@ function InputForm({
         }
         variant="outlined"
         disabled={!formData.department}
-        // className="half-width"
       >
         {banners.map((b) => (
           <MenuItem key={b.bannerid} value={b.bannerid}>
@@ -243,10 +217,6 @@ function InputForm({
         <br/>
         or direct to email <a href="mailto:uxui@acommerce.asia">uxui@acommerce.asia</a> for more information.
       </Box>
-      {/* Debug: show logo array length and first item */}
-      {/* <div>Logos loaded: {logos.length}</div>
-      <pre>{JSON.stringify(logos[0], null, 2)}</pre> */}
-       {/* Add this at the very end, before the closing tags */}
         <Button
           variant="outlined"
           style={{ marginTop: 24 }}
